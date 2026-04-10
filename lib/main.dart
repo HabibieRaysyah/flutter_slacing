@@ -48,7 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
         leading: Icon(Icons.menu),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
             padding: EdgeInsetsGeometry.only(right: 350, top: 20),
@@ -57,94 +56,97 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
-          Column(
-            children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsetsGeometry.only(top: 20),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsGeometry.only(left: 20, right: 20),
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Icon(Icons.fitness_center, size: 30),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent,
-                              elevation: 0,
-                              side: BorderSide(color: Colors.black, width: 2),
-                              shape: CircleBorder(),
-                              padding: EdgeInsets.all(20),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsGeometry.only(right: 20),
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Icon(Icons.bike_scooter, size: 30),
-                            style: ElevatedButton.styleFrom(
-                              shape: CircleBorder(),
-                              backgroundColor: Colors.transparent,
-                              elevation: 0,
-                              side: BorderSide(color: Colors.black, width: 2),
-                              padding: EdgeInsets.all(20),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsGeometry.only(right: 20),
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Icon(
-                              Icons.directions_run_outlined,
-                              size: 30,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              shape: CircleBorder(),
-                              backgroundColor: Colors.transparent,
-                              elevation: 0,
-                              side: BorderSide(color: Colors.black, width: 2),
-                              padding: EdgeInsets.all(20),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsGeometry.only(right: 20),
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Icon(Icons.heart_broken, size: 30),
-                            style: ElevatedButton.styleFrom(
-                              shape: CircleBorder(),
-                              backgroundColor: Colors.transparent,
-                              elevation: 0,
-                              side: BorderSide(color: Colors.black, width: 2),
-                              padding: EdgeInsets.all(20),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsGeometry.only(right: 20),
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Icon(Icons.shopping_bag_rounded, size: 30),
-                            style: ElevatedButton.styleFrom(
-                              shape: CircleBorder(),
-                              backgroundColor: Colors.transparent,
-                              elevation: 0,
-                              side: BorderSide(color: Colors.black, width: 2),
-                              padding: EdgeInsets.all(20),
-                            ),
-                          ),
-                        ),
-                      ],
+
+          Padding(
+            padding: EdgeInsetsGeometry.only(top: 20),
+            child: Row(
+              children: [
+                Padding(
+                  padding: EdgeInsetsGeometry.only(left: 20, right: 20),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Icon(Icons.fitness_center, size: 30),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                      side: BorderSide(color: Colors.black, width: 2),
+                      shape: CircleBorder(),
+                      padding: EdgeInsets.all(20),
                     ),
                   ),
-                ],
-              ),
-            
-            ],
+                ),
+                Padding(
+                  padding: EdgeInsetsGeometry.only(right: 20),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Icon(Icons.bike_scooter, size: 30),
+                    style: ElevatedButton.styleFrom(
+                      shape: CircleBorder(),
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                      side: BorderSide(color: Colors.black, width: 2),
+                      padding: EdgeInsets.all(20),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsGeometry.only(right: 20),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Icon(Icons.directions_run_outlined, size: 30),
+                    style: ElevatedButton.styleFrom(
+                      shape: CircleBorder(),
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                      side: BorderSide(color: Colors.black, width: 2),
+                      padding: EdgeInsets.all(20),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsGeometry.only(right: 20),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Icon(Icons.heart_broken, size: 30),
+                    style: ElevatedButton.styleFrom(
+                      shape: CircleBorder(),
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                      side: BorderSide(color: Colors.black, width: 2),
+                      padding: EdgeInsets.all(20),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsGeometry.only(right: 20),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Icon(Icons.shopping_bag_rounded, size: 30),
+                    style: ElevatedButton.styleFrom(
+                      shape: CircleBorder(),
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                      side: BorderSide(color: Colors.black, width: 2),
+                      padding: EdgeInsets.all(20),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return Card(
+                  child: ListTile(
+                    leading: Icon(Icons.fitness_center,),
+                    title: Text("test"),
+                    subtitle: Text("Gaktau Tulisan nya apaan"),
+                  ),
+                );
+              },
+            ),
           ),
         ],
       ),

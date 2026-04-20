@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hariinii/secondpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: "/",
+      routes: {
+        '/': (context) => MyHomePage(title: "Flutter"),
+        '/second': (context) => secondpage(),
+      },
     );
   }
 }
@@ -64,7 +70,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 Padding(
                   padding: EdgeInsetsGeometry.only(left: 20, right: 20),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/second");
+                    },
                     child: Icon(Icons.fitness_center, size: 30),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
@@ -136,18 +144,57 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: 5,
+              itemCount: 4,
               itemBuilder: (context, index) {
-                return Card(
-                  child: ListTile(
-                    leading: Icon(Icons.fitness_center,),
-                    title: Text("test"),
-                    subtitle: Text("Gaktau Tulisan nya apaan"),
+                return Padding(
+                  padding: EdgeInsetsGeometry.only(top: 7, right: 15, left: 15),
+                  child: Column(
+                    children: [
+                      Card(
+                        child: ListTile(
+                          leading: Icon(Icons.fitness_center),
+                          title: Text(
+                            "Strength Class",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Row(
+                            children: [
+                              Icon(Icons.timer_outlined),
+                              Text("9:35AM - 10:35AM"),
+                              Padding(
+                                padding: EdgeInsetsGeometry.only(left: 176),
+                                child: Row(
+                         b         children: [
+                                    Icon(Icons.home_outlined),
+                                    Text("Bogor"),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 );
               },
             ),
           ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.date_range),
+            label: 'Tanggal',
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'List'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
         ],
       ),
     );

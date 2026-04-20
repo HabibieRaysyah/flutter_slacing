@@ -167,7 +167,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               Padding(
                                 padding: EdgeInsetsGeometry.only(left: 176),
                                 child: Row(
-                         b         children: [
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
                                     Icon(Icons.home_outlined),
                                     Text("Bogor"),
                                   ],
